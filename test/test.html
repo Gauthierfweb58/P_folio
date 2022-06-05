@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+        <details>
+            <summary>Cliquez pour plus d'informations</summary>
+            <p>Parcours professionnel, de 1998 à ce jour dfdfdfdfdfdfffdf</p>
+
+        </details>
+            <br/>
+            <br/>
+    <dialog id="ma-fenetre">
+        <p>mes recherches concernant la protection des sans voix qui souffrent sous le regard des humains</p>
+    <button id="fermer">fermer</button>
+    </dialog>
+    
+    <button id="affiche">afficher les informations</button>
+    
+    <script>
+        var fenetre = document.getElementById('ma-fenetre');
+        var btn_affiche = document.getElementById('affiche');
+        var btn_ferme = document.getElementById('fermer');
+        btn_affiche.onclick = function(){
+            fenetre.showModal();
+        }
+        btn_ferme.onclick = function (){
+            fenetre.close(); 
+        }
+        </script>
+
+        <div id="contact">
+            <h1>Envoyer un email</h1>
+            <form action="#" method="post">
+                <fieldset>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrer votre nom de famille"/>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Entrer votre email"/>
+                
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Quel est votre message ?"></textarea>
+                    <input type="submit" value="Envoyer message">
+                </fieldset>
+            </form>
+        </div>
+</body>
+</html>
+
+
+
+

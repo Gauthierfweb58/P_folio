@@ -1,0 +1,35 @@
+
+ 
+ .pulse {
+	 z-index: -1;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 transform: translate(-50%, -50%);
+	 max-width: 30rem;
+}
+ .pulse circle {
+	 fill: #ff5154;
+	 transform: scale(0);
+	 opacity: 0;
+	 transform-origin: 50% 50%;
+	 animation: pulse 2s cubic-bezier (0.5, 0.5, 0, 1);
+}
+ .pulse circle:nth-child(2) {
+	 fill: #7fc6a4;
+	 animation: pulse 2s 0.75s infinite cubic-bezier(0.5, 0.5, 0, 1);
+}
+ .pulse circle:nth-child(3) {
+	 fill: #e5f77d;
+	 animation: pulse 2s 1.5s infinite cubic-bezier(0.5, 0.5, 0, 1);
+}
+
+ @keyframes pulse {
+	 25% {
+		 opacity: 0.4;
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ 
