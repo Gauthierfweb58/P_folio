@@ -771,7 +771,7 @@ form a{
     background-color: rgb(238, 216, 171);
 }
 #conteneur2 header, nav, main, aside, footer {
-    border: 2px dashed rgb(212, 16, 16);
+    border: 2px solid rgb(212, 16, 16);
     padding: 10px;  
 }
 #conteneur2 li{
@@ -802,6 +802,10 @@ form a{
   border: 1px solid blue;
   background-color: #88cbca;
   font-size: 20px;
+  border-radius: 8px;
+  margin:0 auto;
+  margin-top:60px;
+  padding: 10px;
 }
 
  #survol3d>ul{
