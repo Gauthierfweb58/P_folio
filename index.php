@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,7 +37,7 @@
       <div class="container-btns">
         <button class="btn-first b1" #competence>Mes compétences</button>
         <button class="btn-first b2">Mes créations</button>
-        <button class="btn-first b1">Contact</button>
+        <a href=#contact><button class="btn-first b1">Contact</button></a>
       </div>
     </div>
 
@@ -251,7 +253,7 @@
       <figure class="location-listing pic1 deplacement">
         <a class="location-title" href="#">TORTUE IMPRESSION 3D</a>
         <div class="location-image">
-          <a href="#"><img src="/img/tortue_3d.jpg" alt="tortue_3d"></a>
+          <a href="#"><img src="./img/tortue_3d.jpg" alt="tortue_3d"></a>
         </div>
       </figure>
     </div>
@@ -259,7 +261,7 @@
       <figure class="location-listing pic2">
         <a class="location-title" href="#">MODELISATION TORTUE</a>
         <div class="location-image">
-          <a href="#"><img src="/img/tortue2.jpg" alt="tortue2"></a>
+          <a href="#"><img src="./img/tortue2.jpg" alt="tortue2"></a>
         </div>
       </figure>
     </div>
@@ -267,7 +269,7 @@
       <figure class="location-listing pic3">
         <a class="location-title" href="#">SITE GAME CLUB</a>
         <div class="location-image">
-          <a href="#"><img src="/img/game_club.jpg" alt="game club"></a>
+          <a href="#"><img src="./img/game_club.jpg" alt="game club"></a>
         </div>
       </figure>
     </div>
@@ -276,7 +278,7 @@
         <a class="location-title" href="#">SITE VEGGIELAND</a>
         <div class="location-image">
           <a href="#">
-            <img src="/img/capture_veggieland.jpg" alt="veggieland"> </a>
+            <img src="./img/capture_veggieland.jpg" alt="veggieland"> </a>
         </div>
       </figure>
     </div>
@@ -287,15 +289,15 @@
   <section>
     <div id="contact">
       <h1>Envoyer un email</h1>
-      <form action="#" method="post">
+      <form action="ajout.php" method="POST">
         <fieldset>
           <label for="nom">Nom</label>
           <input type="text" id="nom" name="nom" placeholder="Entrer votre nom de famille" />
           <label for="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Entrer votre email" />
 
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Quel est votre message ?"></textarea>
+          <label for="messages">Messages</label>
+          <textarea id="messages" name="messages" placeholder="Quel est votre message ?"></textarea>
           <input type="submit" value="Envoyer message">
         </fieldset>
       </form>
@@ -305,6 +307,7 @@
         <circle id="Oval" cx="512" cy="512" r="512"></circle>
         <circle id="Oval" cx="512" cy="512" r="512"></circle>
       </svg>
+      <a href=#accueil><button class="btnform">Accueil</button></a>
     </div>
     <div>
     </div>
@@ -331,14 +334,14 @@
       <article>
         <figure>
           <figcaption>Cliquer sur l'image pour visiter mon site </figcaption>
-          <a href="#accueil"><img src="/img/capture_portfolio.jpg" alt="lien hostinger"></a>
+          <a href="#accueil"><img src="./img/capture_portfolio.jpg" alt="lien hostinger"></a>
 
         </figure>
 
       </article>
       <aside>
         <figure>
-          <img src="/img/bonhomme.png" alt="on y va?">
+          <img src="./img/bonhomme.png" alt="on y va?">
           <figcaption>Alors on y va chercher mon CV?</figcaption>
         </figure>
         <button type="submit" class="btncv"><a href="https://endyveg3d.fr/" target="_blank">Site wordpress</a></button>

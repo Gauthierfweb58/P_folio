@@ -682,6 +682,22 @@ form a{
     border:1px solid #556f8c;
     cursor:pointer;
 }
+.btnform {
+  border: 5px solid #f1f1f1;
+  outline: none;
+  background-color: rgba(200, 153, 153, 0.5);
+  font-size: 30px;
+  padding: 20px;
+  width: 300px;
+  color: #17191a;
+  cursor: pointer;
+  margin-left:110%;
+}
+.btnform:hover {
+  transition: all 0.3s ease-in-out;
+  background: #6fa5c8;
+  color: #333;
+}
 
 .pulse {
   z-index: 2;
@@ -722,7 +738,7 @@ form a{
     -225deg,
     #231557 0%,
     #44107a 29%,
-    #ff1361 67%,
+    #77d25d 67%,
     #fff800 100%
   );
   background-size: auto auto;
@@ -806,6 +822,11 @@ form a{
   margin:0 auto;
   margin-top:60px;
   padding: 10px;
+}
+.btncv:hover {
+  transition: all 0.3s ease-in-out;
+  background: #e7c686;
+  color: #333;
 }
 
  #survol3d>ul{
