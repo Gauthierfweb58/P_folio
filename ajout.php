@@ -17,11 +17,44 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
         $envoi->bindValue(":messages",$messages);
 
         $envoi->execute();
-        header("Location:index.php");
+        include("message_email.php");
+        message_email("frederic.gauthieraux@gmail.com", $email,"message reçu sur le portfolio", $messages);
+        header("Location:ajout_suppression_tableau.php");
     };
 
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="tabform">
+   <form method="POST" class="bordered">
+        <div>
+        <label for="nom">Ajout</label>
+        <input type="text" name="nom" id="nom" required>
+        </div>
+        <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+        <label for="messages">Messages</label>
+        <input type="text" name="messages" id="messages" required>
+        </div>
+        <button class="btncv" type="submit">Envoyer</button>
+    </form>
+    </div>
+</body>
+</html>
+</body>
+</html>
+
 
 
 

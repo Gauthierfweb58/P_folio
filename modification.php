@@ -20,7 +20,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
         $envoi->bindValue(":messages",$messages, PDO::PARAM_STR);
         $envoi->execute();
 
-        header("Location:index.php");
+        header("Location:ajout_suppression_tableau.php");
         
 
     }else{
@@ -41,11 +41,11 @@ if (isset($_GET["id"]) && !empty($_GET["id"])){
     $resultat=$envoi->fetch();
 
     if(!$resultat){
-        header("Location:index.php");
+        header("Location:ajout_suppression_tableau.php");
     }
 
 } else{
-    header("Location:index.php");
+    header("Location:ajout_suppression_tableau.php");
 }
 ?>
 <!DOCTYPE html>

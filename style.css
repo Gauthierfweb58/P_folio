@@ -2,17 +2,24 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
   border: none;
 }
-html {
-  scroll-behavior: smooth;
+
+section {
+	box-sizing: border-box;
+	overflow-x: hidden;
 }
+
 body {
-  background-color: #d7ecf2;
+	min-width: 320px;
   font-size: 14px;
   font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  
+ 
   /* padding: 2000px 0; */
 }
 @import url('https://fonts.googleapis.com/css?family=Raleway:700,900');
@@ -36,13 +43,14 @@ header.header1{
 
 .container-first h1 {
   text-transform: uppercase;
-  font-size: 70px;
-  color: #f6d8d8;
+  font-size: clamp(12px,4em,100px);
+  color: #dff6d8;
   font-family: 'Raleway', sans-serif;
   font-style:italic;
 }
 .header1 h1 span {
   position: relative;
+  
 }
 .container-btns {
   position: relative;
@@ -203,6 +211,7 @@ a{
 
 /* Sections */
 .section{
+  width: 100%;
   height: 100vh;
   min-height: 500px;
   position: relative;
@@ -248,8 +257,13 @@ a{
 /* dualcolor */
 .top-section{
   background-image: url('./img/humanrobot.png');
+  width: 100%;
+  height: 100vh;
+  min-height:800px;
   background-repeat: no-repeat;
   background-size: cover;
+
+ 
 }
 .bottom-section{
   background: #d4fef2;
@@ -284,13 +298,6 @@ a{
 .content-theme-light a{
   color: #728E93;
 }
-/*.logo1{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-   
-}*/
 #section3{
   
   align-items: center;
@@ -305,13 +312,14 @@ a{
     transform: translateX(calc(-250px * 5));
   }
 }
+
 .slider {
   box-shadow: 0 20px 20px -5px rgba(4, 4, 4, 0.125);
   height: 300px;
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 850px;
+  width: 100%;
 }
 .slider::before, .slider::after {
 
@@ -320,6 +328,10 @@ a{
   position: absolute;
   width: 300px;
   z-index: 2;
+}
+.slide img{
+  width: 250px;
+  height: 200px;
 }
 .slider::after {
   right: 0;
@@ -399,6 +411,11 @@ h1 {
     right: 0;
     background: #06aa06;
 }
+
+#check_and_bt ~ #menu_present{
+  display: none;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 :root {
   /* Base font size */
@@ -410,7 +427,7 @@ h1 {
 }
 form.neon{
   display: flex;
-  background-image: url(/img/main_patte.jpg);
+  background-image: url("./img/main_patte.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 350px;
@@ -593,6 +610,40 @@ form a{
     transform: translate(20px,100px);
     
   }
+ #tourne {
+   position: relative4;
+   
+   animation: tourne 5s infinite;
+ }
+  @keyframes tourne{
+    0%{
+      opacity: 1;
+      transform: rotate(0deg);
+
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(360deg);
+    }
+  }
+
+  #tourne2 {
+    position: relative4;
+    
+    animation: tourne2 5s infinite;
+  }
+   @keyframes tourne2{
+     0%{
+       opacity: 1;
+       transform: rotate(360deg);
+ 
+     }
+     100% {
+       opacity: 0;
+       transform: rotate(0deg);
+     }
+   }
+
 
   #contact{
     position: relative;
@@ -605,6 +656,7 @@ form a{
     background-image: url('img/main_tel.png');
     background-repeat: no-repeat;
     background-size:contain;
+    animation : ombre ease-in infinite alternate 500ms;
     
 }
 
@@ -631,7 +683,7 @@ form a{
 }
 
 #contact input{
-    width: 50%;
+    width: 100%;
     height: 35px;
     padding: 5px 20px 0px 20px;
     margin: 0 0 20px 0;
@@ -639,7 +691,7 @@ form a{
     border-radius: 5px;
     box-shadow: 0px 1px 0px #f2f2f2;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: #edd9d918;
     text-transform: uppercase;
     text-shadow: 0px -1px 0px #334f71;
@@ -657,7 +709,7 @@ form a{
     background: #5E768D;
     border-radius: 5px;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color:#f9f0f0;
     text-transform: uppercase;
     text-shadow: 0px -1px 0px #eef1f5;
@@ -682,16 +734,42 @@ form a{
     border:1px solid #556f8c;
     cursor:pointer;
 }
+#contact #accord_donnees+label{
+  color:rgb(249, 249, 251);
+  font-size: clamp(12px,0.8rem,17px);
+  text-align: left;
+  margin-left: 25%;
+}
+
+@keyframes ombre{
+  0%{
+    box-shadow:0 0 15px red;
+  }
+  100% {
+    box-shadow: 0 0 15px yellow;
+  }
+}
+
+#accord_donnees:checked+label{
+  background-color: rgb(129, 169, 212);
+  font-weight: bold;
+  margin-top: 60px;
+  color:black;
+  margin-bottom: 20px;
+}
+
 .btnform {
+  display: inline;
+  margin:20px;
   border: 5px solid #f1f1f1;
   outline: none;
-  background-color: rgba(200, 153, 153, 0.5);
+  background-color: rgba(181, 95, 95, 0.5);
   font-size: 30px;
   padding: 20px;
   width: 300px;
   color: #17191a;
   cursor: pointer;
-  margin-left:110%;
+ 
 }
 .btnform:hover {
   transition: all 0.3s ease-in-out;
@@ -765,8 +843,9 @@ form a{
     grid-template-columns:300px 1fr 300px;
     gap: 20px;
     /* Mise en forme */
-    width: 90%;
+    width: 100%;
     margin:auto;
+    background-image: url(./img/20201113183337.JPG);
 }
 #conteneur2 header, footer {
     grid-column: 1/4;
@@ -777,27 +856,21 @@ form a{
   margin-bottom: 2%;
 }
 #conteneur2 nav {
-    grid-column: 1/2; 
+    grid-column:1/2; 
 }
 
 #conteneur2 aside {
     grid-column:3/4; 
 }
-#conteneur2 nav, aside {
+#conteneur2, aside {
     background-color: rgb(238, 216, 171);
 }
-#conteneur2 header, nav, main, aside, footer {
-    border: 2px solid rgb(212, 16, 16);
-    padding: 10px;  
-}
-#conteneur2 li{
-  color: red;
-  padding: 20px;
-}
+
+
 #conteneur2 p {
     margin: 0;
     padding-top:50px;
-    padding-right: 200px;
+    padding-right:50px;
     font-weight: 900;
 }
 #conteneur2 img {
@@ -828,6 +901,126 @@ form a{
   background: #e7c686;
   color: #333;
 }
+
+.modal{
+  /*overlay page content*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  }
+  .modal > div{
+      width: 1200px;
+      background: #fff;
+      position: relative;
+      margin: 1% auto;
+      /*application animation fermeture*/
+      animation: minimise 500ms linear;
+      padding: 30px;
+      border-radius: 7px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+      text-shadow: 0 1px 0 #fff;
+      
+  }
+  
+  a.openModal{
+      margin: 1em auto;
+      display: block;
+      width:200px;
+      background: #ccc;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      border-radius: 7px;
+      text-shadow: 0 1px 0 #fff;
+      border: 1px solid rgba(0,0,0,0.3);
+      
+  }
+  
+  /*le lien bouton de fermeture*/
+  .modal a[href="#close"]{
+      position: absolute;
+      right: 0;
+      top:0;
+      color:transparent;
+  }
+  
+  .modal a[href="#close"]:after {
+      content:"X";
+      display: block;
+      /*position*/
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 1.5em;
+      padding: 1px 1px 1px 2px;
+      /*style*/
+      text-decoration: none;
+      text-shadow: none;
+      text-align: center;
+      font-weight: bold;
+      background: #000;
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  
+  /*le lien-bouton de fermeture au survol et au focus*/
+  .modal a[href="#close"]:focus:after,
+  .modal a[href="#close"]:hover:after {
+      transform: scale(1.1,1.1);
+  }
+  
+  .modal a[href="#close"]:focus:after {
+      outline: 1px solid #000;
+  }
+  
+  /*afficher le masque*/
+  .modal:target {
+   
+      opacity: 1;
+      pointer-events: auto;
+      overflow: scroll;
+  }
+  /*animation ouverture*/
+  .modal:target > div {
+      animation-name: bounce;
+      margin-top:200px;
+  }
+  
+  @keyframes bounce{
+      0% {
+          transform: scale3d(0.1,0.1,1);
+          box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+      }
+      55% {
+          transform: scale3d(1.08,1.08,1);
+          box-shadow: 0 10px 20px rgba(0,0,0,0);
+      }
+      75% {
+          transform: scale3d(0.95,0.95,1);
+          box-shadow: 0 0 20px rgba(0,0,0,0.9);
+      }
+      100% {
+          transform: scale3d(1,1,1);
+          box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+      }
+  }
+  /*animation de fermeture*/
+  @keyframes minimise {
+      0% {
+          transform: scale3d(1,1,1);
+      }
+      100% {
+          transform: scale3d(0.1,0.1,1);
+      }
+  }
 
  #survol3d>ul{
   position: relative;
@@ -947,6 +1140,431 @@ form a{
   background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
   }
 
+.tabform{
+  display: flex;
+  justify-content: center;
+}
+  table{
+    border-spacing: 0;
+    width: 500px;
+  }
+  table.bordered{
+    border:solid 2px black;
+    border-radius: 20px;
+    box-shadow: 0 3px 3px black;
+    
+  }
+  .bordered td, .bordered th{
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  .bordered th{
+    background-color: #25b6ef;
+    background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+    box-shadow: 0 1px 0 rgba(200, 153, 153, 0.5) inset;
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  }
+  .bordered td:first-child, .bordered th:first-child{
+    border-left: none;
+  }
+  .bordered th:first-child{
+    border-radius: 20px 0 0 0;
+  }
+  .bordered th:last-child{
+    border-radius: 0 20px 0 0;
+  }
+  .bordered tr:last-child td:first-child{
+    border-radius: 0 0 0 20px;
+  }
+  .bordered tr:last-child td:last-child{
+    border-radius: 0 0 20px 0 ;
+  }
+  .bordered tr:hover{
+    background: #fbf8e9;
+  }
+  .btncv2{
+    display:flex;
+    border: 1px solid blue;
+    background-color: #88cbca;
+    font-size: 20px;
+    border-radius: 8px;
+    margin:0 auto;
+   
+    padding: 10px;
+  }
+  .btncv2:hover {
+    transition: all 0.3s ease-in-out;
+    background: #e7c686;
+    color: #333;
+  }
+  
+
+.caroussel_diapo input{position:absolute;left:-9999px}
+    
+.caroussel_diapo{	
+position:relative;
+text-align: center;
+margin:0 auto;
+margin-bottom: 200px;
+margin-top: 0;
+}
+
+
+.contenu_carou {
+width: 500px;
+height: 332px;
+margin: 1rem auto;
+perspective:1200px}
+
+
+.caroussel {
+position: relative;
+transform-style: preserve-3d;
+width: 500px;
+height: 332px;
+transition: 1s transform;
+}
+
+
+.caroussel img {
+max-width:100%;
+position: absolute;
+top: 0;
+left: 0;
+outline:1px solid transparent;
+backface-visibility:hidden;
+will-change: transform;
+transition: 1s transform;
+}
+.contenu_carou:hover {
+  transform: scale(1.5);
+}
+	
+.caroussel img:nth-child(1){
+	
+	transform:translate3d(0,0,540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(2){
+	
+	transform:rotateY(45deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(3){
+	
+	transform:rotateY(90deg) translateZ(540px) scale(.8)
+		
+	}
+	
+.caroussel img:nth-child(4){
+	
+	transform:rotateY(135deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(5){
+	
+	transform:rotateY(180deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(6){
+	
+	transform:rotateY(225deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(7){
+	
+transform:rotateY(270deg) translateZ(540px) scale(.8)
+	
+	}
+	
+.caroussel img:nth-child(8){
+	
+transform:rotateY(315deg) translateZ(540px) scale(.8)
+
+}
+
+.caroussel_diapo input[type=radio] + label {
+cursor: pointer;
+background-color: hsl(203,77%,81%);
+display: inline-block;
+width: 20px;
+border-radius: 50%;
+height: 20px
+	}
+	
+.caroussel_diapo input[type=radio]:checked + label{
+	
+	background-color:hsl(203,77%,61%)
+		
+	}
+
+
+	
+
+/*gauche*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel{
+
+	transform:translateZ(-540px)
+	
+	}
+	
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel{
+	
+transform:translateZ(-540px) rotateY(-45deg)
+	
+	}
+	
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-90deg)
+		
+	}
+	
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-135deg)
+		
+	}
+	
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-180deg)
+		
+	}
+	
+.caroussel_diapo #carou_six:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-225deg)
+		
+	}
+	
+.caroussel_diapo #carou_sept:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-270deg)
+	
+	}
+	
+.caroussel_diapo #carou_huit:checked ~ .contenu_carou .caroussel{
+	
+	transform:translateZ(-540px) rotateY(-315deg)
+	
+	}
+	
+
+/*droite*/
+.caroussel_diapo #carou_un:checked ~ .contenu_carou .caroussel img:nth-child(1){
+	
+	transform:translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_deux:checked ~ .contenu_carou .caroussel img:nth-child(2){
+	
+transform:rotateY(45deg) translateZ(540px) scale(1)
+	
+	}
+.caroussel_diapo #carou_trois:checked ~ .contenu_carou .caroussel img:nth-child(3){
+	
+	transform:rotateY(90deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_quatre:checked ~ .contenu_carou .caroussel img:nth-child(4){
+	
+	transform:rotateY(135deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_cinq:checked ~ .contenu_carou .caroussel img:nth-child(5){
+	
+	transform:rotateY(180deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_six:checked ~ .contenu_carou .caroussel img:nth-child(6){
+	
+	transform:rotateY(225deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_sept:checked ~ .contenu_carou .caroussel img:nth-child(7){
+	
+	transform:rotateY(270deg) translateZ(540px) scale(1)
+	
+	}
+	
+.caroussel_diapo #carou_huit:checked ~ .contenu_carou .caroussel img:nth-child(8){
+	
+	transform:rotateY(315deg) translateZ(540px) scale(1)
+		
+	}
+#menu_present+label{
+    display: none;
+  }
+  
+@media screen and (max-width:768px){
+  body{
+    overflow-x:none;
+    box-sizing: border-box;
+  }
+  .header1 .container-first h1 span {
+    font-size:16px;
+  }
+  .contenu_carou:hover {
+    transform: scale(1.0);
+  }
+  #menu_presentation{
+    display: none;
+    position: absolute;
+    background-color: white;
+    margin-top: 2500px;
+
+  }
+  #menu_present+label{
+    display: block;
+    margin-right:40px;
+    padding-top: 10px;
+  }
+  #menu_present:checked ~ #menu_presentation{
+    display: block;
+  }
+  .slide img{
+    width: 150px;
+    height: 100px;
+  }
+  .slider .slide-track {
+    animation: scroll 15s linear infinite;
+    display: flex;
+    width: calc(150px * 3);
+  }
+  
+  #contact{
+    width: 100%;
+}
+
+/*barre 3d facebook....*/
+#survol3d>ul{
+  padding: 0;
+  position: relative;
+  top: 80%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  margin-top: 120px;
+  padding-left: 0;
+  display: flex;
+  
+  }
+  #survol3d ul li{
+ /* list-style: none;*/
+
+  margin:25px 50px 10px -10px;
+  transform: scale(0.7);
+  }
+  .section h1{
+    padding:0;
+    font-size: 5vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .content-center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: unset;
+  }
+  #conteneur2 p {
+    
+    padding-right:0;
+  }
+  .modal > div{
+    width: 500px;
+    background: #fff;
+    position: relative;
+    margin: 0;
+    /*application animation fermeture*/
+    animation: minimise 500ms linear;
+    padding: 5px;
+    border-radius: 7px;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+    text-shadow: 0 1px 0 #fff;
+}
+
+
+  .contenu_carou {
+  width: 300px;
+  height: 200px;
+  margin: 1rem auto;
+  perspective: 600px}
+  
+  
+  .caroussel {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 300px;
+  height: 200px;
+  transition: 1s transform;
+  }
+  
+  
+  .caroussel img {
+  max-width:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline:1px solid transparent;
+  backface-visibility:hidden;
+  will-change: transform;
+  transition: 1s transform;
+}
+#caroussel_general{
+  overflow-x:none;
+  box-sizing: border-box;
+}
+.top-section{
+  background-image: url('./img/humanrobot.png');
+  background-size: cover;
+  background-position-x: 40%;
+}
+.footer_final{
+  display: none;
+}
+#galerie{
+  display: none;
+}
+#tourne, #tourne2{
+  margin: 40px;
+  margin-top: 500px;
+  margin-bottom:0;
+  position: absolute;
+  flex-direction: column;
+}
+a.openModal{
+  margin: 25px;
+}
+.logo {
+  position: absolute;
+  right: 2.9%;
+  top: 10%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+.modal:target > div {
+  animation-name: bounce;
+  margin-top:100px;
+  margin-left:8%;
+}
+}
 
 
   

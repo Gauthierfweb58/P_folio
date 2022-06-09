@@ -10,9 +10,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])){
 
     $envoi->execute();
 
-    header("Location:index.php");
-
-
+    header("Location:ajout_suppression_tableau.php");
 }
 
 
