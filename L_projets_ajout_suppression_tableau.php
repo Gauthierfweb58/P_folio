@@ -102,6 +102,6 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
 <?php
 }
 else{
-    echo"interdit"; //protge la page
+    echo"interdit"; //protège la page
 }
 ?>

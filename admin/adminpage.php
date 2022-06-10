@@ -5,11 +5,11 @@ if(!empty($_SESSION['login'])) {
 ?>
 
 <h2>Hello Admin</h2>
-<button><a href="deconnexion.php">Déconnexion</a></button>
+<a href="deconnexion.php" class="btn-first">Déconnexion</a>
 
 <?php
 }
 else{
-    header("location:./index.php");
+    echo"interdit"; //protège la page
 }
 ?>
