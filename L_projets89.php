@@ -10,7 +10,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
         $etat=strip_tags($_POST["etat"]);
         $L_github=strip_tags($_POST["L_github"]);
 
-        $requete="INSERT INTO L_projets (images, etat, L_github) VALUES (:images, :etat, :L_github)";
+        $requete="INSERT INTO l_projets (images, etat, L_github) VALUES (:images, :etat, :L_github)";
         $envoi=$db->prepare($requete);
         $envoi->bindValue(":images",$images);
         $envoi->bindValue(":etat",$etat);
@@ -40,10 +40,10 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
       <h1>Modifier un projet</h1>
       <form action="L_projets_ajout_suppression_tableau.php" method="POST" class="inscription">
         <fieldset>
-          <label for="image">Images</label>
-          <input type="text" id="image" name="image" placeholder="nom image" />
-          <label for="github">Lien github</label>
-          <input id="github" name="github" placeholder="github"></input>
+          <label for="images">Images</label>
+          <input type="text" id="images" name="images" required placeholder="nom images" />
+          <label for="L_github">Lien github</label>
+          <input type="text" id="L_github" name="L_github" required placeholder="L_github"></input>
           <input type="radio" id="etat" name="etat" value="visible"/>
           <label for="etat">Visible</label>
           <input type="radio" id="etat" name="etat" value="invisible"/>

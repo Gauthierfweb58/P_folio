@@ -12,7 +12,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
         $etat=strip_tags($_POST["etat"]);
         $L_github=strip_tags($_POST["L_github"]);
 
-        $requete="UPDATE L_projets SET images=:images, etat=:etat, L_github=:L_github WHERE id=:id";
+        $requete="UPDATE l_projets SET images=:images, etat=:etat, L_github=:L_github WHERE id=:id";
         $envoi= $db->prepare($requete);
         $envoi->bindValue(":id",$id, PDO::PARAM_INT);
         $envoi->bindValue(":images",$images, PDO::PARAM_STR);
@@ -30,22 +30,28 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
 
 
 if (isset($_GET["id"]) && !empty($_GET["id"])){
-    
+    require_once("connexion.php");
     $id=strip_tags($_GET["id"]); //protège la connexion des injections, pas de balises HTML et PHP
 
-    $requete= "SELECT * FROM L_projets WHERE id=:id";
+    $requete= "SELECT * FROM l_projets WHERE id=:id";
     $envoi= $db->prepare($requete);
     $envoi->bindValue(":id",$id, PDO::PARAM_INT);
     $envoi->execute();
 
     $resultat=$envoi->fetch();
-
+    if($resultat["etat"]=="visible"){
+        $visible="checked";
+    }else{
+        $visible="";
+    }
+    $invisible=$resultat["etat"]=="invisible"?"checked":"";/*methode ternaire*/
+    
     if(!$resultat){
-        header("Location:L_projets_ajout_suppression_tableau.php");
+        header("Location:index.php");
     }
 
 } else{
-    header("Location:L_projets_ajout_suppression_tableau.php");
+    header("Location:index.php");
 }
 ?>
 
@@ -63,15 +69,15 @@ if (isset($_GET["id"]) && !empty($_GET["id"])){
 <section class="formulaire">
     <div id="contact">
       <h1>Modifier un projet</h1>
-      <form action="L_projets_ajout_suppression_tableau.php" method="POST" class="inscription">
+      <form method="POST" class="inscription">
         <fieldset>
-          <label for="image">Images</label>
-          <input type="text" id="image" name="image" placeholder="nom image" />
-          <label for="github">Lien github</label>
-          <input id="github" name="github" placeholder="github"></input>
-          <input type="radio" id="etat" name="etat" value="visible"/>
+          <label for="images">Images</label>
+          <input type="text" id="images" name="images" value="<?= $resultat["images"]?>" required placeholder="nom images" />
+          <label for="L_github">Lien github</label>
+          <input type="text" id="L_github" name="L_github" value="<?= $resultat["L_github"]?>" required placeholder="L_github"></input>
+          <input type="radio" id="etat" name="etat" value="visible" <?=$visible?>>
           <label for="etat">Visible</label>
-          <input type="radio" id="etat" name="etat" value="invisible"/>
+          <input type="radio" id="etat" name="etat" value="invisible" <?=$invisible?>>
           <label for="etat">Invisible</label>
           <input type="submit" value="Envoyer message">
         </fieldset>
