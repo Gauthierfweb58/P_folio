@@ -68,7 +68,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
             ?>  
             
                 <tr>
-                    <td><?= $article["images"] ?></td>
+                    <td><img src="img/<?= $article["images"] ?>" style="width:250px; height:auto"></td>
                     <td><?= $article["etat"] ?></td>
                     <td><?= $article["L_github"] ?></td>
                     <td><a href="L_projets_suppression.php?id=<?= $article["id"] ?>"><button class="btncv2" type="submit">Supprimer</button></a></td>

@@ -309,7 +309,7 @@ a{
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-250px * 5));
+    transform: translateX(calc(-250px *7));
   }
 }
 
@@ -693,7 +693,6 @@ form a{
     font-family: sans-serif;
     font-size: 14px;
     color: #edd9d918;
-    text-transform: uppercase;
     text-shadow: 0px -1px 0px #334f71;
 }
 

@@ -1,0 +1,5 @@
+RewriteEngine on
+
+Rewritecond %{REQUEST_URI} !\.png|jpg|jpeg|pdf)$
+
+RewriteRule .*$ - [F]

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url(./20201222164711.JPG);
+background-image: url(./loulous_eau.JPG);
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -74,19 +74,27 @@ color: white;
 margin-left: 4px;
 }
 
+.container-btns {
+  position: relative;
+  top: 50px;
+}
 .btn-first {
-    border: 2px solid #1c1f78;
-    outline: none;
-    background: transparent;
-    font-size: 30px;
-    padding: 20px;
-    width: 300px;
-    color: #f1f1f1;
-    cursor: pointer;
-  }
-
-  .btn-first:hover {
-    transition: all 0.3s ease-in-out;
-    background: #f1f1f1;
-    color: #333;
-  }
+  border: 2px solid #170808;
+  outline: none;
+  background:rgba(140, 137, 137, 0.8);
+  font-size: 30px;
+  padding: 20px;
+  width: 300px;
+  color: #f1f1f1;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 20px 0 50px 0;
+}
+.btn-first:nth-child(1){
+  margin-right: 30px;
+}
+.btn-first:hover {
+  transition: all 0.3s ease-in-out;
+  background: #f1f1f1;
+  color: #333;
+}
