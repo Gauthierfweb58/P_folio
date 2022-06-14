@@ -420,7 +420,7 @@ $i++;}
         
         <a href=#contact><button class="btnform b1">Contact</button></a>
         <a href=#accueil><button class="btnform">Accueil</button></a>
-        <a href="https://endyveg3d.fr/" target="_blank"><button class="btnform">Télécharger mon CV</button></a>
+        <a href="https://endyveg3d.fr/" target="_blank"><button class="btnform">MON CV</button></a>
         
       </article>
       

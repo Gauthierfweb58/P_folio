@@ -1,4 +1,10 @@
 <?php
+session_start();
+                                    //protège page admin
+if(!empty($_SESSION['login'])) {
+?>
+
+<?php
 require_once("connexion.php");//page de connexion
 
 if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non vide
@@ -84,3 +90,9 @@ if (isset($_GET["id"]) && !empty($_GET["id"])){
       </form>
 </body>
 </html>
+<?php
+}
+else{
+    echo"interdit"; //protège la page
+}
+?>

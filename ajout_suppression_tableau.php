@@ -1,4 +1,11 @@
+
 <?php
+session_start();
+                                    //protège page admin
+if(!empty($_SESSION['login'])) {
+?>
+<?php
+
 require_once("connexion.php");
 
 $requete= "SELECT * FROM utilisateurs";
@@ -98,3 +105,9 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
     </div>
 </body>
 </html>
+<?php
+}
+else{
+    echo"interdit"; //protège la page
+}
+?>

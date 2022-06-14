@@ -1,4 +1,10 @@
 <?php
+session_start();
+                                    //protège page admin
+if(!empty($_SESSION['login'])) {
+?>
+
+<?php
 require_once("connexion.php");
 
 if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non vide
@@ -18,7 +24,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
 
         $envoi->execute();
         include("message_email.php");
-        message_email("frederic.gauthieraux@gmail.com", $email,"message reçu sur le portfolio", $messages);
+        /*message_email("frederic.gauthieraux@gmail.com", $email,"message reçu sur le portfolio", $messages);*/
         header("Location:ajout_suppression_tableau.php");
     };
 
@@ -54,6 +60,13 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
 </html>
 </body>
 </html>
+
+<?php
+}
+else{
+    echo"interdit"; //protège la page
+}
+?>
 
 
 

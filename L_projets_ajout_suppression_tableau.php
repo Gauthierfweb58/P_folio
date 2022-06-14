@@ -22,17 +22,20 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
     if(isset($_POST["images"]) && !empty($_POST["images"])
         && isset($_POST["etat"]) && !empty($_POST["etat"])
         && isset($_POST["L_github"]) && !empty($_POST["L_github"])
+        && isset($_POST["nom"]) && !empty($_POST["nom"])
 
     ){
         $images=strip_tags($_POST["images"]);
         $etat=strip_tags($_POST["etat"]);
         $L_github=strip_tags($_POST["L_github"]);
+        $nom=strip_tags($_POST["nom"]);
 
-        $requete="INSERT INTO l_projets (images, etat, L_github) VALUES (:images, :etat, :L_github)";
+        $requete="INSERT INTO l_projets (images, etat, L_github, nom) VALUES (:images, :etat, :L_github, :nom)";
         $envoi=$db->prepare($requete);
         $envoi->bindValue(":images",$images);
         $envoi->bindValue(":etat",$etat);
         $envoi->bindValue(":L_github",$L_github);
+        $envoi->bindValue(":nom",$nom);
 
         $envoi->execute();
         /*include("message_email.php");
