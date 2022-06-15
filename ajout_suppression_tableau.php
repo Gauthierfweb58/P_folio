@@ -103,6 +103,7 @@ if ($_POST){ //appui sur le bouton envoyer on vérifie si existant et champ non 
         </fieldset>
       </form>
     </div>
+    </section>
 </body>
 </html>
 <?php

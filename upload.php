@@ -6,7 +6,7 @@
 //die;
 
 //on vérifie si un fichier a été envoyé
-if(isset($_FILES["images"]) && $_FILES["images"]["error"]=== 0){
+if(isset($_FILES["image"]) && $_FILES["image"]["error"]=== 0){
     //on a reçu l'image
 
     //var_dump($_FILES);
@@ -18,15 +18,14 @@ if(isset($_FILES["images"]) && $_FILES["images"]["error"]=== 0){
         "jpg" =>"image/jpeg",
         "jpeg" =>"image/jpeg",
         "png" =>"image/png",
-        "pdf" => "application/pdf",
-        "svg" => "image/svg"
+        "pdf" => "application/pdf"
     ];
     //on va récupérer le nom du fichier
-    $filename = $_FILES["images"]["name"];
+    $filename = $_FILES["image"]["name"];
 //on va récupérer le type
-    $filetype = $_FILES["images"]["type"];
+    $filetype = $_FILES["image"]["type"];
   //on récupère la taille
-    $filesize = $_FILES["images"] ["size"];
+    $filesize = $_FILES["image"] ["size"];
 
     $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
     // on vérifie l'absence de l'extension dans les clés de $allowed ou l'absence du type MIME dans les valeurs (est ce que la clé $extension existe dans $allowed)
@@ -42,12 +41,12 @@ if(isset($_FILES["images"]) && $_FILES["images"]["error"]=== 0){
 // on génère un nom unique
 $newname = md5(uniqid());
 // on génère le chemin complet
-$newfilename = __DIR__ . "./../img/$newname.$extension";
+$newfilename = __DIR__ . "/img/$newname.$extension";
 //echo $newfilename;
 //var_dump($_FILES);
 
 // on déplace le fichier de tmp à uploads en le renommant
-if(!move_uploaded_file($_FILES["images"]["tmp_name"], $newfilename)){
+if(!move_uploaded_file($_FILES["image"]["tmp_name"], $newfilename)){
     die("l'upload a échoué");
     
 }
@@ -65,11 +64,20 @@ chmod($newfilename, 0644);/*protection du fichier niveau droit ici on interdit l
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-<section class="formulaire">
+    <!--<h1>ajout de fichiers</h1>
+    <form method="post" enctype="multipart/form-data"> pour de type file envoyer les données en parallèle que les données
+<div>
+    <label for="fichier">Fichier</label>
+    <input type="file" name="image" id="fichier" > name="image[]  multiple /plusieurs fichiers
+</div>
+    <button type="submit">Envoyer</button>
+    </form>-->
+
+    <section class="formulaire">
     <div id="contact2" >
       <h1>ENVOYER FICHIER DOSSIER IMAGE</h1>
       <form method="POST" class="inscription" enctype="multipart/form-data"> <!--pour de type file envoyer les données en parallèle que les données-->
@@ -81,5 +89,7 @@ chmod($newfilename, 0644);/*protection du fichier niveau droit ici on interdit l
       </form>
     </div>
 </section>    
+
+
 </body>
 </html>

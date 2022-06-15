@@ -21,7 +21,7 @@ session_start();
 </head>
 <?php
 require_once("connexion.php");
-            
+      
             try{
               $db=new PDO("mysql:host=$servername;dbname=$database;charset=utf8",$username,$mdp);
               $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -42,7 +42,7 @@ require_once("connexion.php");
                  *avec le nom des colonnes sélectionnées en clefs*/
                 $sliders = $requete1->fetchAll(PDO::FETCH_ASSOC);
 
-                $requete2 = $db->prepare("SELECT id, images, nom FROM imgs_header WHERE ancrage_maison=0");
+                $requete2 = $db->prepare("SELECT id, images, nom, liens FROM imgs_header WHERE ancrage_maison=0");
                 $requete2->execute();
                 
                 /*Retourne un tableau associatif pour chaque entrée de notre table
@@ -86,11 +86,11 @@ require_once("connexion.php");
     
    <img src="./ressources/<?php echo $imgs_header1["images"] ?>" alt="<?php echo $imgs_header1["nom"] ?>" class="logo">
 
-    <ul class="medias">
+   <ul class="medias">
     <?php
     $i=1; 
 foreach ($imgs_header as $img_header) {?>
-  <li class="bulle"><img class="logo-medias" src="./ressources/<?php echo $img_header["images"] ?>" alt="<?php echo $img_header["nom"] ?>"></li>    
+ <li class="bulle"><a href="<?php echo $img_header["liens"] ?>" target="_blank"><img class="logo-medias" src="./ressources/<?php echo $img_header["images"] ?>" alt="<?php echo $img_header["nom"] ?>"></a></li>
 <?php
 $i++;} 
 ?>
@@ -199,42 +199,34 @@ $i++;}
 
          <h3>Développement web et mobile</h3>
          <ul>
+         
            <li>VisualStudioCode</li>
-           <li>HTML & CSS</li>
+           <li>HTML5 & CSS3</li>
            <li>PHP & MYSQL</li>
            <li>TAILWIND</li>
+           <li>FIGMA</li>
+           <li>GIT</li>
+           </ul>
+           <br>
+          <h3>Informatique</h3>
+          <ul>
+           <li>Réseaux Niveau bac professionnel en TAI</li>
+           <li>Bureautique</li>
+           <li>Blender open source débutant/intermédiaire</li>
+           <li>Impression en PLA (Artillery GENIUS )  et résine (Elegoo Mars 2)</li>
          </ul>
-            Apprentissage pour développer et coder mes pages web à l'aide de l'éditeur de code Microsoft vscode pour la création des projets web dans les languages HTML5/CSS3, PHP et bases de données MYSQL
-          
-
-           
-
-
         </p>
       </section>
       <br>
       <section class="content-section" id="mes_creations">
         <h2>Quelques créations</h2>
-        <p>perferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-
-          aperiam voluptas vel ratione alias nemo dignissimos quia. Non, cum!
-          Odit eos corporis sunt pariatur magni itaque quidem commodi rem. At
-          porro quos quis architecto ea debitis corporis est explicabo modi
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          provident tempore soluta, ratione laborum dicta est quo perferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similique
-          perferendis, vitae nobis, similique eligendi dicta beatae placeat
-          aperiam voluptas vel ratione alias nemo dignissimos quia. Non, cum!
-          Odit eos corporis sunt pariatur magni itaque quidem commodi rem. At
-          porro quos quis architecto ea debitis corporis est explicabo modi
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-          provident tempore soluta, ratione laboru
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
+        <p>Je présente sous forme de carroussel mes différents projets et créations modélisation/impression 3D (logiciel de modélisation Blender, Tinkercad). Imprimantes résine et PLA.
+          <br>
+          <br>
+          Les projets web sont JADOO en HTML5 et CSS3 en individuel, Veggieland en HTML5 et CSS3 mais en équipe de 2 personnes. Concernant GAME-CLUB ce site est aussi fait en équipe de 2 personnes en HTML5/CSS3 et PHP. 
+          <br>
+          <br>
+          Pour ce Portfolio en HTML5/CSS3 et PHP.
 
         </p>
       </section>
@@ -242,22 +234,7 @@ $i++;}
       <section class="content-section" id="CVeg3d">
         <h2>CV</h2>
         <p>
-          perferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus?
-          Debitis, doloribus. Aliquam fugit asperiores aliquid quis similiqueperferendis
-          voluptatem voluptates harum omnis quas fuga id odio voluptatibus
+          Par l'intermédiaire du bouton cliquable ci-dessous, vous pouvez télécharger mon CV sous forme de fichier PDF sur mon site Wordpress CVeg3d qui reste à améliorer et qui est hébergé par Hostinger.
         </p>
         <form class="neon" action="https://endyveg3d.fr/" target="_blank">
           <button class="CVneon" type="submit">MON CV</button>
@@ -277,16 +254,7 @@ $i++;}
         </div>
       </div>
     </header>
-   <!--<nav>
-      <a href="#">Tortue impression 3D</a>
-      <a href="#">Tortue blender</a>
-      <a href="#">VeggieLand</a>
-      <a href="#">Game Club</a>
-    </nav>-->
-    <!--<div id="b1" class="tortue" ></div>
-			<div id="b2" class="tortue_2"></div>
-			<div id="b3" class="veggie_land"></div>
-			<div id="b4" class="game_club"></div>-->
+
    <div id="galerie">
       <figure class="location-listing pic1 deplacement">
         <a class="location-title" href="#">MODELISATION IMMEUBLE</a>
@@ -401,15 +369,7 @@ $i++;}
 
 <section class="header_final">
     <div id="conteneur2">
-      <header id="header_final">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-            <h3 class="animate-charcter"> CVEG3D</h3>
-            </div>
-          </div>
-        </div>
-      </header>
+      
       <nav class="footer_final">
         <figure>
           <img src="./img/bonhomme.png" alt="on y va?">
@@ -480,12 +440,22 @@ $i++;}
 
 <footer id="footer_final2">
       <div id="survol3d">
+        <div class="icone_3d">
         <ul>
           <li><a href="https://www.facebook.com/profile.php?id=100012512077239"><i class="fa fa-facebook"
                       aria-hidden="true"></i></a></li>
           <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
           <li><a href="https://www.linkedin.com/in/raj-kumar-web-designer/"><i class="fa fa-linkedin"aria-hidden="true"></i></a></li>
         </ul>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+            <h3 class="animate-charcter"> CVEG3D</h3>
+            </div>
+          </div>
+        </div>
+      
           <p>COPYRIGHT@2022</p>
       </div>
         
