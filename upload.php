@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+                                    //protège page admin
+if(!empty($_SESSION['login'])) {
+?>
 <?php
 //echo"<pre>";
 //var_dump($_FILES);
@@ -41,7 +45,7 @@ if(isset($_FILES["image"]) && $_FILES["image"]["error"]=== 0){
 // on génère un nom unique
 $newname = md5(uniqid());
 // on génère le chemin complet
-$newfilename = __DIR__ . "/img/$newname.$extension";
+$newfilename = __DIR__ ."/img/$newname.$extension";
 //echo $newfilename;
 //var_dump($_FILES);
 
@@ -68,6 +72,11 @@ chmod($newfilename, 0644);/*protection du fichier niveau droit ici on interdit l
     <title>Document</title>
 </head>
 <body>
+    <style>
+        body{
+background-image: url("./img/humanrobot10.png");
+        }
+    </style>
     <!--<h1>ajout de fichiers</h1>
     <form method="post" enctype="multipart/form-data"> pour de type file envoyer les données en parallèle que les données
 <div>
@@ -93,3 +102,9 @@ chmod($newfilename, 0644);/*protection du fichier niveau droit ici on interdit l
 
 </body>
 </html>
+<?php
+}
+else{
+    echo"interdit"; //protège la page
+}
+?>

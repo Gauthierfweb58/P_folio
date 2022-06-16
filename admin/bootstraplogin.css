@@ -1,4 +1,24 @@
 /* Made with love by Mutiullah Samim*/
+::before,
+::after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  border: none;
+}
+
+section{
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  
+ 
+  /* padding: 2000px 0; */
+}
+
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
@@ -97,4 +117,13 @@ margin-left: 4px;
   transition: all 0.3s ease-in-out;
   background: #f1f1f1;
   color: #333;
+}
+
+
+
+@media screen and (max-width:1090px){
+.btn-first:nth-child(1){
+ 
+  margin: 10px;
+}
 }

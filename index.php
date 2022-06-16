@@ -66,11 +66,11 @@ require_once("connexion.php");
     <hr>
     <hr>
     <hr>
-    <div class="lignes" id="accueil2">
+    <div class="lignes">
       <div class="l1"></div>
       <div class="l2"></div>
     </div>
-    <div class="lignes2">
+    <div class="lignes2" >
       <div class="l3"></div>
       <div class="l4"></div>
     </div>
@@ -120,8 +120,7 @@ $i++;}
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="content-center">
-              <h1>ACTUELLEMENT</h1>
-              <h2 class="animate-charcter"> Compétences</h2>
+              <h1 class="animate-charcter"> COMPETENCES</h1>
             </div>
           </div>
         </div>
@@ -177,7 +176,6 @@ $i++;}
         <a href="#les_competences">Mes compétences</a>
         <a href="#mes_creations">Découvrez quelques projets réalisés</a>
         <a href="#CVeg3d">CV à télécharger</a>
-        <a href=#accueil2>Accueil</a>
       </nav>
   </div>
     
@@ -370,7 +368,7 @@ $i++;}
 <section class="header_final">
     <div id="conteneur2">
       
-      <nav class="footer_final">
+      <nav class="footer_final" id="accueil2">
         <figure>
           <img src="./img/bonhomme.png" alt="on y va?">
           <figcaption>Alors on y va chercher mon CV?</figcaption>
@@ -384,13 +382,13 @@ $i++;}
         
       </article>
       
-        <p id="modalbtn"><a href="#example"class="openModal">Mentions légales</a></p>
+        <p id="modalbtn"><a href="#example"class="openModal">Mentions <br>légales</a></p>
       <aside id="example" class="modal">
         <div>
             <h2>Mentions légales</h2>
-            <p>
-                Mentions légales <br>
-      En vigueur au 08/06/2022<br>
+            
+        
+                 <p>En vigueur au 08/06/2022<br>
 
  
       Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs et visiteurs, ci-après l""Utilisateur", du site https://porte_folio GAUTHIER FREDERIC , ci-après le "Site", les présentes mentions légales.<br>
@@ -440,14 +438,12 @@ $i++;}
 
 <footer id="footer_final2">
       <div id="survol3d">
-        <div class="icone_3d">
         <ul>
           <li><a href="https://www.facebook.com/profile.php?id=100012512077239"><i class="fa fa-facebook"
                       aria-hidden="true"></i></a></li>
           <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
           <li><a href="https://www.linkedin.com/in/raj-kumar-web-designer/"><i class="fa fa-linkedin"aria-hidden="true"></i></a></li>
-        </ul>
-        </div>
+      </ul>
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">

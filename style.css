@@ -7,11 +7,11 @@
   border: none;
 }
 
-section {
+section{
 	box-sizing: border-box;
 	overflow-x: hidden;
 }
-
+ 
 body {
 	min-width: 320px;
   font-size: 14px;
@@ -59,12 +59,13 @@ header.header1{
 .btn-first {
   border: 2px solid #f1f1f1;
   outline: none;
-  background: transparent;
+  background: rgb(127, 255, 212,0.6);
   font-size: 30px;
   padding: 20px;
   width: 300px;
-  color: #f1f1f1;
+  color: #1b1814;
   cursor: pointer;
+  border-radius: 70px 0 30px 0;
 }
 .btn-first:nth-child(1){
   margin-right: 30px;
@@ -233,7 +234,7 @@ a{
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
+ height: 100%;
   padding: 0;
   z-index: 99;
   -webkit-transform: translateZ(0);
@@ -246,25 +247,31 @@ a{
   pointer-events: all;
 }
 .content-center{
-  height: 100%;
+  /*height: 100%;*/
   display: flex;
+  padding-right: 20px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-x: hidden;
 }
-
-
 /* dualcolor */
 .top-section{
-  background-image: url('./img/humanrobot.png');
+  background-image: url('./img/20210821235318.JPG');
   width: 100%;
-  height: 100vh;
-  min-height:800px;
+ /* width: clamp(50%,80%,100%);*/
+  background-position-x: center;
   background-repeat: no-repeat;
   background-size: cover;
-
- 
+  overflow-x: hidden;
+  
 }
+.top-section img{
+  width: 100%;
+  
+}
+
+
 .bottom-section{
   background: #d4fef2;
 }
@@ -1009,7 +1016,7 @@ form a{
   pointer-events: none;
   }
   .modal > div{
-      width: 1200px;
+      width: 1000px;
       background: #fff;
       position: relative;
       margin: 1% auto;
@@ -1023,14 +1030,14 @@ form a{
   }
   
   a.openModal{
-      margin: 1em auto;
+      margin: 10px auto;
       display: block;
-      width:auto;
+      width:150px;
       background: #ccc;
       text-align: center;
       text-decoration: none;
       color: black;
-      padding: 10px;
+      padding: 2px;
       border-radius: 7px;
       text-shadow: 0 1px 0 #fff;
       border: 1px solid rgba(0,0,0,0.3);
@@ -1503,11 +1510,97 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
 #menu_present+label{
     display: none;
   }
+
+  /*admin page*/
+  .box {
+    width: 150vh;
+    margin: 6rem auto;
+    padding-top: 6rem;
+    background: rgba(255,255,255,0.3);
+    padding: 2.5rem;
+    border: 2px solid #ddd;
+    border-radius: 20px/50px;
+  }
+  .button {
+    font-size: 1.3rem;
+    padding: 1rem;
+    display: block;
+    color: #fff;
+    border: 2px solid #1d2d2d;
+    border-radius: 20px/50px;
+    text-decoration: none;
+    cursor: pointer;
+    background: rgba(26, 25, 25, 0.71);
+    transition: all 0.1s ease-out;
+    text-align: center;
+  }
+  .button:hover {
+    background: #f358eb;
+    color: #333;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .popup {
+    margin: 4.5rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 5px;
+    width: 70%;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    font-style:var(--neon-border-color);
+  }
+  .popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+  }
+  .popup .cross:hover {
+    color: #12FCF8;
+  }
   
+
+
+  @media screen and (max-width:1090px){
+.modal > div{
+  width: 750px;
+  text-align: left;
+}
+
+.btn-first:nth-child(1){
+ 
+  margin: 30px;
+}
+  }
+
 @media screen and (max-width:768px){
   body{
     overflow-x:none;
     box-sizing: border-box;
+    background-color: #bfd6e6;
+  }
+
+  .btn-first:nth-child(1){
+    margin-right: 30px;
+    margin: 30px;
   }
   .l2 {
     width: 150px;
@@ -1537,7 +1630,7 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
     font-size:20px;
   }
 
-  .top-section{
+  /*.top-section{
     background-image: url('./img/humanrobot.png');
     width: 100vh;
     height: 100vh;
@@ -1546,7 +1639,7 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
     background-size: cover;
   
    
-  }
+  }*/
   .contenu_carou:hover {
     transform: scale(1.0);
   }
@@ -1576,8 +1669,19 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
     width: calc(150px * 3);
   }
   
-  #contact{
-    width: 100%;
+  
+#contact{
+  width: 100%;
+  margin:300px auto;
+  padding: 60px 30px;
+  background: #c9d0de;
+  border:1px solid #e1e1e1;
+  box-shadow: 0px 0px 8px #444;
+  background-image: url('img/main_tel.png');
+  background-repeat: no-repeat;
+  background-size:contain;
+  animation : ombre ease-in infinite alternate 500ms;
+  
 }
 
 /*barre 3d facebook....*/
@@ -1616,20 +1720,7 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
     
     padding-right:0;
   }
-  .modal > div{
-    width: 500px;
-    background: #fff;
-    position: relative;
-    margin: 0;
-    /*application animation fermeture*/
-    animation: minimise 500ms linear;
-    padding: 5px;
-    border-radius: 7px;
-    box-shadow: 0 3px 20px rgba(0,0,0,0.9);
-    text-shadow: 0 1px 0 #fff;
-}
-
-
+  
   .contenu_carou {
   width: 300px;
   height: 200px;
@@ -1660,11 +1751,7 @@ transform:rotateY(45deg) translateZ(540px) scale(1)
   overflow-x:none;
   box-sizing: border-box;
 }
-.top-section{
-  background-image: url('./img/humanrobot.png');
-  background-size: cover;
-  background-position-x: 40%;
-}
+
 .footer_final{
   display: none;
 }
@@ -1692,9 +1779,34 @@ a.openModal{
 .modal:target > div {
   animation-name: bounce;
   margin-top:100px;
-  margin-left:8%;
+  margin:15%;
 }
-
+.modal > div{
+  width: 300px;
+  background: #fff;
+  position: relative;
+  margin: 0;
+  /*application animation fermeture*/
+  animation: minimise 500ms linear;
+  padding: 5px;
+  border-radius: 7px;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  text-shadow: 0 1px 0 #fff;
+}
+#example p{
+font-size: 15px;
+}
+ /* dualcolor */
+ /*.top-section{
+  background-image: url('./img/humanrobot.png');
+  width: clamp(50%,100%,100%);
+  min-height:800px;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  overflow-x: hidden;
+  
+}*/
 }
 @media screen and (max-width:500px){
 
@@ -1711,7 +1823,22 @@ a.openModal{
   flex-direction: row;
   
   }
+  /* dualcolor */
+/*.top-section{
+  background-image: url('./img/humanrobot.png');
+  width: clamp(50%,100%,100%);
+  min-height:800px;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  overflow-x: hidden;
+  
+}*/
 
+a.openModal{
+  margin-top: 320px;
+  margin-left:-260px;
+}
 }
 
 
